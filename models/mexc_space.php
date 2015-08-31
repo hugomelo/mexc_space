@@ -40,6 +40,8 @@ class MexcSpace extends MexcSpaceAppModel
 		)
 	);
 	
+	var $hasMany = array('SiteFactory.FactSite');
+	
 	function beforeSave() 
 	{
         $this->old = $this->find(array($this->primaryKey => $this->id));
