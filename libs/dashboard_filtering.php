@@ -37,9 +37,7 @@ class DashboardFiltering
 			}
 		}
 		
-		if (empty($conditions['mexc_space_id']))
-			$conditions['mexc_space_id'] = $allowedSpaces;
-		else
+		if (!empty($conditions['mexc_space_id']))
 			$conditions['mexc_space_id'] = array_intersect($conditions['mexc_space_id'], $allowedSpaces);
 		
 		return $conditions;
